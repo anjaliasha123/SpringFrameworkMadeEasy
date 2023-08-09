@@ -8,9 +8,8 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
     
     <bean name="score" class="com.anjali.spring.core.springcoreproject.refTypes.Score" p:maths="99.5" p:physics="100.0" p:chemistry="98.75"/>
-    <bean name="student" class="com.anjali.spring.core.springcoreproject.refTypes.Student" p:name="Anita">
-    	<property name="scores" ref="score"/>
-    </bean>
+    <bean name="student" class="com.anjali.spring.core.springcoreproject.refTypes.Student" p:name="Anita" p:scores-ref="score"/>
+    	
 
 
 </beans>
