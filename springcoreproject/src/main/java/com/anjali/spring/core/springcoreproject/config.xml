@@ -7,7 +7,34 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
-    <bean name="emp" class="com.anjali.spring.core.springcoreproject.Employee" p:id="101" p:name="Baji"/>
+    <bean name="emp" class="com.anjali.spring.core.springcoreproject.Employee" p:id="101" p:name="Baji">
+    	<property name="departments">
+    		<list>
+    			<value>IT</value>
+    			<value>Support</value>
+    		</list>
+    	</property>
+    	<property name="managers">
+    		<set>
+    			<value>Arun</value>
+    			<value>Varun</value>
+    			<value>Tharun</value>
+    		</set>
+    	</property>
+    	<property name="deptRoleMap">
+    		<map>
+    			<entry key="IT" value="developer"/>
+    			<entry key="Support" value="QA tester"/>
+    		</map>
+    	</property>
+    	<property name="countryAndLanguages">
+    		<props>
+    			<prop key="USA">English</prop>
+    			<prop key="India">Hindi</prop>
+    			<prop key="Canada">English</prop>
+    		</props>
+    	</property>
+    </bean>
 
 
 </beans>
