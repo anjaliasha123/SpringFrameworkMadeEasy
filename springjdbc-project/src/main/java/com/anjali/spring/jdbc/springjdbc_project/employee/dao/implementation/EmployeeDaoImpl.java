@@ -23,4 +23,18 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
+	@Override
+	public int updateRow(Employee employee) {
+		String sql = "update employee set firstName=? where lastName=?";
+		int result = this.jdbcTemplate.update(sql, employee.getFirstName(), employee.getLastName());
+		return result;
+	}
+
+	@Override
+	public int deleteRow(Employee employee) {
+		String sqlQuery = "delete from employee where lastName=?";
+		int result = this.jdbcTemplate.update(sqlQuery, employee.getLastName());
+		return result;
+	}
+
 }
