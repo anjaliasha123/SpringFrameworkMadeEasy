@@ -1,9 +1,12 @@
 package com.anjali.spring.jdbc.springjdbc_project.employee.dao.implementation;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.anjali.spring.jdbc.springjdbc_project.employee.dao.EmployeeDao;
 import com.anjali.spring.jdbc.springjdbc_project.employee.dto.Employee;
+import com.anjali.spring.jdbc.springjdbc_project.employee.rowmapper.EmployeeRowMapper;
 
 public class EmployeeDaoImpl implements EmployeeDao{
 	private JdbcTemplate jdbcTemplate;
@@ -35,6 +38,22 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		String sqlQuery = "delete from employee where lastName=?";
 		int result = this.jdbcTemplate.update(sqlQuery, employee.getLastName());
 		return result;
+	}
+
+	@Override
+	public Employee read(int id) {
+		String dqlQuery = "select * from employee where id=?";
+		EmployeeRowMapper rowMapper = new EmployeeRowMapper();
+		Employee emp = this.jdbcTemplate.queryForObject(dqlQuery,rowMapper, id);
+		return emp;
+	}
+
+	@Override
+	public List<Employee> getAll() {
+		String sqlQuery = "select * from employee";
+		EmployeeRowMapper rowMapper = new EmployeeRowMapper();
+		List<Employee> emps = this.jdbcTemplate.query(sqlQuery, rowMapper);
+		return emps;
 	}
 
 }
