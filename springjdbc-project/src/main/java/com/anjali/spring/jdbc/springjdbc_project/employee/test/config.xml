@@ -7,6 +7,9 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
     
+
+    <context:component-scan base-package="com.anjali.spring.jdbc.springjdbc_project.employee.dao.implementation"/>
+    
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="dataSource" 
     p:driverClassName="com.mysql.jdbc.Driver" 
     p:url="jdbc:mysql://localhost/mydb"
@@ -14,6 +17,6 @@
     p:password="root"
     />
 	<bean class="org.springframework.jdbc.core.JdbcTemplate" p:dataSource-ref="dataSource" name="jdbcTemplate"/>
-	<bean class="com.anjali.spring.jdbc.springjdbc_project.employee.dao.implementation.EmployeeDaoImpl" name="employeeDaoImpl" p:jdbcTemplate-ref="jdbcTemplate"/>
+	
 
 </beans>

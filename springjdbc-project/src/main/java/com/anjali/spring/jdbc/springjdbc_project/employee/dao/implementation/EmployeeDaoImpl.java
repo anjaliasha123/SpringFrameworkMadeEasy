@@ -2,13 +2,18 @@ package com.anjali.spring.jdbc.springjdbc_project.employee.dao.implementation;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.anjali.spring.jdbc.springjdbc_project.employee.dao.EmployeeDao;
 import com.anjali.spring.jdbc.springjdbc_project.employee.dto.Employee;
 import com.anjali.spring.jdbc.springjdbc_project.employee.rowmapper.EmployeeRowMapper;
 
+@Component(value="employeeImpl")
 public class EmployeeDaoImpl implements EmployeeDao{
+	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	@Override

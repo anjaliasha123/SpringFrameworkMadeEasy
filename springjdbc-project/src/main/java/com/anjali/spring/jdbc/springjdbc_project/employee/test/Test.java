@@ -14,7 +14,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/anjali/spring/jdbc/springjdbc_project/employee/test/config.xml");
-		EmployeeDao obj = (EmployeeDao) ctx.getBean("employeeDaoImpl");
+		EmployeeDao obj = (EmployeeDao) ctx.getBean("employeeImpl");
 //		int result = obj.create(new Employee(1, "Varsha","Karun"));
 //		System.out.println("Number of records updated: "+result);
 //		result = obj.create(new Employee(2, "Baji","Tarun"));
