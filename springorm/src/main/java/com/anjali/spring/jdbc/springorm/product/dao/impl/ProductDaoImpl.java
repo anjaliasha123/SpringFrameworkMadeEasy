@@ -5,8 +5,11 @@ import com.anjali.spring.jdbc.springorm.product.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-@Component
+import java.io.Serializable;
+
+@Component("productDao")
 public class ProductDaoImpl implements ProductDao {
     @Autowired
     HibernateTemplate hibernateTemplate;
@@ -20,7 +23,9 @@ public class ProductDaoImpl implements ProductDao {
     }
 
     @Override
+    @Transactional
     public int createProduct(Product product) {
-        return 0;
+        Integer save = (Integer) this.hibernateTemplate.save(product);
+        return save;
     }
 }
