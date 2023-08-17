@@ -16,7 +16,8 @@ public class App
 
         ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
         ProductDao productDao = (ProductDao) context.getBean("productDao");
-        int result = productDao.createProduct(new Product(1, "sample prod","sample desc",20.0));
-        System.out.println("result: "+result);
+//        int result = productDao.createProduct(new Product(1, "sample prod","sample desc",20.0));
+//        System.out.println("result: "+result);
+        productDao.updateProduct(new Product(1, "sample prod","sample desc",80.0));
     }
 }

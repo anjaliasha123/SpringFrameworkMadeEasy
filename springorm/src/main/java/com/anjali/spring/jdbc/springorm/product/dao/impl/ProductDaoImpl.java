@@ -28,4 +28,10 @@ public class ProductDaoImpl implements ProductDao {
         Integer save = (Integer) this.hibernateTemplate.save(product);
         return save;
     }
+
+    @Override
+    @Transactional
+    public void updateProduct(Product product) {
+        this.hibernateTemplate.update(product);
+    }
 }
