@@ -1,5 +1,6 @@
 package com.anjali.spring.springmvc.dto;
 
+import java.util.List;
 
 public class Employee {
 	@Override
@@ -9,11 +10,13 @@ public class Employee {
 	private int id;
 	private String name;
 	private int salary;
-	public Employee(int id, String name, int salary) {
+	private List<String> dept;
+	public Employee(int id, String name, int salary, List<String> dept) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.salary = salary;
+		this.dept = dept;
 	}
 	public int getId() {
 		return id;
@@ -32,6 +35,12 @@ public class Employee {
 	}
 	public void setSalary(int salary) {
 		this.salary = salary;
+	}
+	public List<String> getDept() {
+		return dept;
+	}
+	public void setDept(List<String> dept) {
+		this.dept = dept;
 	}
 	
 	
