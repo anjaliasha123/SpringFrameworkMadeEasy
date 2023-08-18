@@ -10,6 +10,9 @@ public class HelloController {
 	public ModelAndView hello() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("hello");
+		mv.addObject("id", 1);
+		mv.addObject("name", "Ashley");
+		mv.addObject("salary", 80000);
 		return mv;
 	}
 }
