@@ -1,4 +1,4 @@
-package com.anjali.spring.springmvcorm.models;
+package com.anjali.spring.springmvcorm.user.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
